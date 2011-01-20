@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe User do
+describe User do  
   
   before(:each) do
     @attr = {
@@ -129,5 +129,4 @@ describe User do
       end
     end
   end
-  
 end
