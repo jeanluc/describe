@@ -7,12 +7,7 @@ body {
 }
 
 header {
-  padding-top: 20px;
-}
-
-header img {
-  padding: 1em;
-  background: #fff;
+  padding-top: 0px;
 }
 
 section {
@@ -57,7 +52,7 @@ nav {
 
 nav ul {
   margin: 0;
-  padding: 0;
+  padding: 5px;
 }
 
 nav ul li {
@@ -95,6 +90,9 @@ a.signup_button {
   font-size: 150%;
   font-weight: bold;
   padding: 20px;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px#888;
+	box-shadow: 0 0 5px #888;
 }
 
 /* Round corners */
@@ -104,6 +102,23 @@ a.signup_button {
   -webkit-border-radius: 10px;
   border-radius:         10px;
 }
+
+.topped {
+	text-align: right;
+	width: 480px;
+	-moz-border-radius-bottomleft: 	 10px;
+	-moz-border-radius-bottomright:	 10px;
+	border-bottom-right-radius:	 		 10px;
+	border-bottom-left-radius:	 		 10px;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px#888;
+	box-shadow: 0 0 5px #888;
+}
+.test {
+-moz-border-bottom-*-radius:    	10px;
+-webkit-border-bottom_*-radius: 	10px;
+}
+
 
 footer {
   text-align: center;
@@ -120,13 +135,15 @@ footer nav {
 /* Main Title and sub-Title */
 
 a.mainTitle {
-	font-family: Times, Verdana;
-	font-size: 32pt;
+	color: black;
+	font-family: Georgia, Times;
+	font-size: 30pt;
 	text-decoration: none;
 }
 
 a.subTitle {
-	font-family: Times, Verdana;
+	color: black;
+	font-family: Georgia, Times;
 	font-size: 10pt;
 	font-style: italic;
 	text-decoration: none;
