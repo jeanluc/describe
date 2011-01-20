@@ -67,7 +67,12 @@ Describe::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
   
+  resources :sessions, :only => [:new, :create, :destroy]
+
   match '/signup',  :to => 'users#new'
+  match '/signin',  :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
+  
   
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
