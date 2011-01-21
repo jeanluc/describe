@@ -39,19 +39,19 @@ module SessionsHelper
   
   private
 
-  def user_from_remember_token
-    User.authenticate_with_salt(*remember_token)
-  end
+    def user_from_remember_token
+      User.authenticate_with_salt(*remember_token)
+    end
 
-  def remember_token
-    cookies.signed[:remember_token] || [nil, nil]
-  end
+    def remember_token
+      cookies.signed[:remember_token] || [nil, nil]
+    end
   
-  def store_location
-    session[:return_to] = request.fullpath
-  end
+    def store_location
+      session[:return_to] = request.fullpath
+    end
 
-  def clear_return_to
-    session[:return_to] = nil
-  end
+    def clear_return_to
+      session[:return_to] = nil
+    end
 end

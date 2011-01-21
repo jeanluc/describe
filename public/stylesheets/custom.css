@@ -177,7 +177,8 @@ td.sidebar {
 }
 
 .profile img.gravatar {
-  border: 1px solid #999;
+  border: 1px solid #ccc;
+  padding: 2px;
   margin-bottom: -15px;
 }
 

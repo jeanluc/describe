@@ -1,7 +1,9 @@
 <h1>Home</h1>
 
 <p>
-	This is the home of the 'Describe' Application of the <a href="http://www.biblio.educa.ch">Digital School Library Project</a>.
+This is the home of the 'Describe' Application of the <a href="http://www.biblio.educa.ch">Digital School Library Project</a>.
 </p>
 
+<% unless signed_in? %>
 <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+<% end %>
