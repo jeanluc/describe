@@ -1,18 +1,23 @@
 # == Schema Information
-# Schema version: 20110120144904
+# Schema version: 20110121140708
 #
 # Table name: users
 #
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  email              :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  encrypted_password :string(255)
+#  salt               :string(255)
+#  admin              :boolean
 #
 
 require 'digest'
 
 class User < ActiveRecord::Base
+  
+  has_many :notices
   
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation

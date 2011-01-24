@@ -10,3 +10,12 @@ Factory.sequence :email do |n|
   "person-#{n}@example.com"
 end
 
+Factory.define :notice do |notice|
+  notice.association  :biblio
+end
+
+# This factory leads to a Type Mismatch error in tests
+Factory.define :biblio do |biblio|
+  biblio.title              "Main Notice title"
+  biblio.description        "General resource description"
+end

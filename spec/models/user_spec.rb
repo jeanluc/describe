@@ -149,4 +149,22 @@ describe User do
       @user.should be_admin
     end
   end
+  
+  describe "notice associations" do
+
+    before(:each) do
+      @user = User.create(@attr)
+      @biblio = Biblio.new(:title => "Title", :description => "Description")
+      @n1 = Factory(:notice, :biblio => @biblio, :user => @user, :created_at => 1.day.ago)
+      @n2 = Factory(:notice, :biblio => @biblio, :user => @user,:created_at => 1.hour.ago)
+    end
+
+    it "should have a notices attribute" do
+      @user.should respond_to(:notices)
+    end
+    
+    it "should have the right notices in the right order" do
+      @user.notices.should == [@n2, @n1]
+    end
+  end
 end

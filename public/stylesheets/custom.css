@@ -5,6 +5,8 @@
 body {
   background: #F0F0F0;
   color: #222;
+	font-size:75%;
+	font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -182,18 +184,56 @@ td.sidebar {
   margin-bottom: -15px;
 }
 
+/* Forms */
+
 div.field, div.actions {
   margin-bottom: 10px;
 }
 
+div.label, div.input {
+	vertical-align: top;
+	display: inline-table;
+}
+
+div.label {
+	padding-top: 3px;
+	width: 20%;
+	text-align: right;
+}
+
+div.input {
+	margin-left: 5px;
+}
+
+label.mandatory {
+	font-weight: bold;
+}
+
+label.optional {
+	font-weight: normal;
+}
+
+
 input[type=text], input[type=password],
 input.text, input.title,
 textarea, select {
+	width: 390px;
 	padding: 3px;
 	-moz-border-radius:    3px;
   -webkit-border-radius: 3px;
   border-radius:         3px;
   margin: 0.12em 0 0.12em 0;
+  font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	color: #383838;
+	border-color: #888;
+}
+
+input[type=text]:focus, input[type=password]:focus,
+input.text:focus, input.title:focus,
+textarea:focus {
+	border-color: #383838;
+	background-color: #f8f8f8;
 }
 
 input[type=submit] {
@@ -221,24 +261,44 @@ input[type=submit] {
 	-webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
 }
 
+textarea {
+	width: 390px;
+	height: 80px;
+}
+
+
 .field_with_errors {
-  margin-top: 10px;
-  padding: 2px;
-  background-color: red;
-  display: table;
+  display: inline-block;
 }
 
 .field_with_errors label {
-  color: #fff;
+  color: #c00;
 }
 
+.field_with_errors input {
+  border: 2px solid #c00;
+  background-color: #fcc;
+}
+
+.field_with_errors input[type=text]:focus,
+.field_with_errors input[type=password]:focus,
+.field_with_errors input.text:focus,
+.field_with_errors input.title:focus,
+.field_with_errors textarea:focus {
+  border: 2px solid #c00;
+	background-color: #f8f8f8;
+	color: #c00;
+}
+
+
 #error_explanation {
-  width: 400px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
+	padding: 10px;
+  border: 2px solid #c00;
   margin-bottom: 20px;
   background-color: #f0f0f0;
+	-moz-border-radius:    3px;
+  -webkit-border-radius: 3px;
+  border-radius:         3px;
 }
 
 #error_explanation h2 {
@@ -246,19 +306,15 @@ input[type=submit] {
   font-weight: bold;
   padding: 5px 5px 5px 15px;
   font-size: 12px;
-  margin: -7px;
   background-color: #c00;
   color: #fff;
 }
 
 #error_explanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 5px;
+  margin: 0px;
 }
 
 #error_explanation ul li {
-  font-size: 12px;
   list-style: square;
 }
 

@@ -1,13 +1,12 @@
 Describe::Application.routes.draw do
   
+  resources :notices
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
   
   get "pages/home"
-
   get "pages/help"
-
   get "pages/contact"
-  
   get "pages/about"
 
   # The priority is based upon order of creation:
@@ -67,8 +66,6 @@ Describe::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
   
-  resources :sessions, :only => [:new, :create, :destroy]
-
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
@@ -78,8 +75,5 @@ Describe::Application.routes.draw do
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
   match '/home',    :to => 'pages#home'
-
-  # Provisory Link
-  match '/signin',  :to => 'pages#home'
   
 end
