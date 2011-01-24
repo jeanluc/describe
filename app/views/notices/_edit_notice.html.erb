@@ -4,10 +4,14 @@
 	<%= render	:partial => "edit_biblio",
 							:locals => {:f => f } %>
 							
+	<%= render	:partial => "edit_resources",
+							:locals => {:f => f } %>
+	
+							
 	<div class="actions">
 		<div class="label"></div>
 		<div class="input">
-    	<%= f.submit action %>
+    	<%= f.submit action %> or <%= link_to 'Cancel', @notice %>
 		</div>
   </div>
 <% end %>

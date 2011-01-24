@@ -5,9 +5,11 @@ describe Notice do
   before(:each) do
     @user = Factory(:user)
     @biblio = Biblio.new(:title => "Title", :description => "Description")
+    @resource = Resource.new()
     @attr = {
       :user => @user,
-      :biblio => @biblio
+      :biblio => @biblio,
+      :resources => [@resource]
     }
   end
   

@@ -15,13 +15,25 @@ header {
 
 section {
   margin-top: 1em;
-  font-size: 120%;
+  font-size: 110%;
   padding: 20px;
   background: #fff;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px#888;
+	box-shadow: 0 0 5px #888;
 }
 
 section h1 {
   font-size: 200%;
+}
+
+section h2 {
+	font-size: 120%;
+	width: 81%;
+	font-weight: bold;
+	color: #444;
+	border-bottom: 1px dotted #444;
+	margin-bottom: 1em;
 }
 
 /* Links */
@@ -187,7 +199,7 @@ td.sidebar {
 /* Forms */
 
 div.field, div.actions {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 div.label, div.input {
@@ -196,9 +208,10 @@ div.label, div.input {
 }
 
 div.label {
-	padding-top: 3px;
+	padding-top: 5px;
 	width: 20%;
 	text-align: right;
+	color: #444;
 }
 
 div.input {
@@ -213,27 +226,29 @@ label.optional {
 	font-weight: normal;
 }
 
-
 input[type=text], input[type=password],
 input.text, input.title,
 textarea, select {
 	width: 390px;
-	padding: 3px;
+	padding: 5px;
 	-moz-border-radius:    3px;
   -webkit-border-radius: 3px;
   border-radius:         3px;
   margin: 0.12em 0 0.12em 0;
   font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
 	font-size: 100%;
-	color: #383838;
-	border-color: #888;
+	border-color: #fff;
+	background-color: #eee;
 }
 
 input[type=text]:focus, input[type=password]:focus,
 input.text:focus, input.title:focus,
 textarea:focus {
-	border-color: #383838;
-	background-color: #f8f8f8;
+	background-color: #eee;
+	border-color: #eee;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px #888;
+	box-shadow: 0 0 5px #888;
 }
 
 input[type=submit] {
@@ -324,4 +339,75 @@ ul.users {
 
 .users li {
   list-style: none;
+}
+
+.notice_header {
+	padding: 0px;
+	margin: 0px auto;
+	margin-bottom: 1em;
+}
+
+#preview {
+	width: 20%;
+	vertical-align: top;
+	text-align: right;
+	display: inline-table;
+	padding-top: 0px;
+	margin-right: 5px;
+}
+
+#preview img {
+	max-width: 100px;
+	max-height: 80px;
+}
+
+#infos {
+	width: 400px;
+	vertical-align: top;
+	display: inline-table;
+	margin-left: 5px;
+	font-size: 95%;
+}
+
+#infos p {
+	margin-bottom: 1em;;
+}
+
+#infos table {
+	width: 120px;
+	margin: 0;
+}
+
+#infos td.status_label {
+	background-color: #FFF;
+	text-align: right;
+	padding: 0;
+	margin: 0;
+	color: #808080;
+	line-height: 125%;
+	font-size: 90%;
+}
+
+#infos td.status_value {
+	background-color: #FFF;
+	margin: 0;
+	padding: 0;
+	padding-left: 10px;
+	color: #808080;
+	line-height: 125%;
+	font-size: 90%;
+}
+
+
+
+
+.notice_header h2 {
+	border: 0;
+	margin: 0;
+}
+
+.notice_header p {
+	border: 0;
+	margin: 0;
+	line-height: 110%;
 }

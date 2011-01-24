@@ -1,0 +1,20 @@
+<h2>Resources and Links</h2>
+
+<%= f.fields_for :resources do |builder| %>
+  <div class="field">
+		<div class="label">
+    	<%= builder.label :title, "Title", :class => "optional" %>
+		</div>
+		<div class="input">
+    	<%= builder.text_field :title %>
+		</div>
+  </div>
+  <div class="field">
+		<div class="label">
+    	<%= builder.label :url, "Link", :class => "mandatory" %>
+		</div>
+		<div class="input">
+    	<%= builder.text_field :url %>
+		</div>
+  </div>
+<% end %>

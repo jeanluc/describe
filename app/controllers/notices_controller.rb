@@ -12,7 +12,7 @@ class NoticesController < ApplicationController
   
   def new
     @title = "New notice"
-    @notice = Notice.new(:biblio => Biblio.new)
+    @notice = Notice.new(:biblio => Biblio.new, :resources => [Resource.new])
   end
   
   def create
