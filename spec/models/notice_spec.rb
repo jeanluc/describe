@@ -5,7 +5,7 @@ describe Notice do
   before(:each) do
     @user = Factory(:user)
     @biblio = Biblio.new(:title => "Title", :description => "Description")
-    @resource = Resource.new()
+    @resource = Resource.new(:url => "http://www.example.com")
     @attr = {
       :user => @user,
       :biblio => @biblio,
@@ -77,6 +77,33 @@ describe Notice do
       @biblio = @notice.biblio
       @notice.destroy
       Biblio.find_by_id(@biblio.id).should be_nil
+    end
+  end
+  
+  describe "resource association" do
+    
+    before(:each) do
+      @notice = Notice.create(@attr)
+    end
+    
+    it "resource should have a notice attribute" do
+      @notice.resources[0].should respond_to(:notice)
+    end
+    
+    it "notice should owns an existing resource" do
+      new_notice = Notice.create!(@attr)
+      Resource.find(new_notice.resources[0].id)
+    end
+    
+    it "should have the right associated notice" do
+      @notice.resources[0].notice_id.should == @notice.id
+      @notice.resources[0].should == @resource
+    end
+    
+    it "should destroy associated resources" do
+      @resource = @notice.resources[0]
+      @notice.destroy
+      Resource.find_by_id(@resource.id).should be_nil
     end
   end
 end

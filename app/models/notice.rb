@@ -22,12 +22,5 @@ class Notice < ActiveRecord::Base
   validates :biblio,  :presence => true
   
   default_scope :order => 'notices.created_at DESC'
-  
-  private
-  
-    def biblio_not_valid?
-      false
-    end
-  
-  
+    
 end

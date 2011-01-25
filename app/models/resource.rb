@@ -20,5 +20,5 @@ class Resource < ActiveRecord::Base
   attr_accessible :title, :url, :format, :technicalRequirements
   
   validates :url, :presence => true
-  
+    
 end
